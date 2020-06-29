@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    font-family: 'Manrope', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    margin: 0 10%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+
+.contenant {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px hsl(212, 23%, 69%);
+    overflow: hidden;
+    position: relative;
+}
+
+#drawer {
+    width: 100%;
+    height: 30vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.contenant p {
+    color: hsl(214, 17%, 51%);
+    padding: 0 10%;
+    margin: 30px auto;
+
+}
+
+h3 {
+    color: hsl(217, 19%, 35%);
+    padding: 20px 10% 0;
+}
+
+.author {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 0 10%;
+    margin: 20px auto;
+    align-items: center;
+}
+
+#avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+
+.details {
+    padding-left: 10%;
+    text-align: left;
+}
+
+h4 {
+    color: hsl(217, 19%, 35%);
+}
+
+.details p {
+    margin: 0;
+    padding: 0;
+    color: hsl(212, 23%, 69%);
+}
+
+.share {
+    position: relative;
+    background-color: hsl(210, 46%, 95%);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 350ms background-color;
+    z-index: 2;
+}
+
+.share:hover {
+    background-color: hsl(214, 17%, 51%);
+}
+
+.share:hover .st0 {
+    fill: white;
+}
+
+.share svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shareMobile {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 0 10%;
+    width: 100%;
+    background-color: hsl(217, 19%, 35%);
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: 350ms opacity ease-out;
+}
+
+.shareMobile p {
+    margin: 0;
+    padding: 0;
+    margin-right: 15px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    color: hsl(212, 23%, 69%);
+}
+
+.active {
+    background-color: hsl(214, 17%, 51%);
+    justify-self: right;
+}
+
+.active .st0 {
+    fill: white;
+}
+
+.social {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.social .fab {
+    margin: 0 5%;
+    color: hsl(212, 23%, 69%);
+    cursor: pointer;
+    transition: 350ms color;
+}
+
+.social .fab:hover {
+    color: hsl(210, 46%, 95%);
+}
+
+.shareDesktop {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .contenant {
+        display: flex;
+        max-width: 60vw;
+        overflow: unset;
+    }
+
+    #drawer {
+        width: 40%;
+        height: auto;
+        border-top-left-radius:15px;
+        border-bottom-left-radius:15px;
+    }
+
+    h3 {
+
+        margin-top: 5%;
+    }
+
+    .share{
+        position: relative;
+    }
+
+    .shareDesktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        background-color: hsl(217, 19%, 35%);
+        position: absolute;
+        opacity: 0;
+        justify-items: center;
+        padding: 0;
+        width: 250px;
+        height: 55px;
+        border-radius: 10px;
+        left: -110px;
+        bottom: 43px;
+        transition: 350ms opacity ease-out;
+    }
+
+    .shareDesktop p {
+        margin: 0;
+        padding: 0;
+        margin-right: 15px;
+        font-weight: 200;
+        letter-spacing: 5px;
+        color: hsl(212, 23%, 69%);
+        text-align: center;
+    }
+    
+    .socialDesk {
+        display: flex;
+        font-size: 1.5rem;
+        justify-content: space-around;
+    }
+    
+    .socialDesk .fab {
+        margin: 0 5%;
+        color: hsl(212, 23%, 69%);
+        cursor: pointer;
+        transition: 350ms color;
+    }
+    
+    .socialDesk .fab:hover {
+        color: hsl(210, 46%, 95%);
+    }
+
+    .arrow {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid hsl(217, 19%, 35%);
+        position: absolute;
+        bottom: -10px;
+      }
+
+}
